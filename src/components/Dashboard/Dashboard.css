@@ -1,0 +1,65 @@
+.card_blk {
+    background-image: url("../../assets/space2.jpg");
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-size: 600px;
+    transition: all 0.5s;
+    position: relative;
+    cursor: pointer;
+}
+
+.card_blk span {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    transition: all 0.5s;
+}
+
+.card_blk p {
+    display: block;
+    margin: 0;
+    font-weight: 100;
+    font-size: 10px;
+    background-color: #000000;
+    overflow: hidden;
+    height: 0;
+    width: 80%;
+    padding: 0;
+    transition: all 0.5s;
+    border-radius: 22px;
+    color: yellow;
+    text-align: center;
+}
+
+.card_blk:hover p {
+    height: 68px;
+    padding: 5px;
+}
+
+.card_blk:hover,
+.card_blk.big {
+    height: 130px;
+    width: 130px;
+}
+
+.list-unlisted {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-unlisted li {
+    width: 130px;
+    height: 140px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}

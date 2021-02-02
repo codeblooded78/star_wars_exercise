@@ -1,0 +1,5 @@
+export const dashboardConstants = {
+    SEARCH_PLANET:'SEARCH_PLANET',
+    SEARCH_PLANET_ERROR:'SEARCH_PLANET_ERROR',
+    INC_COUNT:'INC_COUNT'
+};
