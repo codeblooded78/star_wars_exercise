@@ -1,32 +1,35 @@
 import {dashboardConstants} from '../constants';
-import { dashboardService} from '../services';
+import {dashboardService} from '../services';
 
 
 export const dashboardAction = {
-    getPlanets
+    getAllPlanets
 
 };
-
-function getPlanets(query) {
-    return async dispatch =>{
+/**
+ * @name getAllPlanets
+ * @params
+ * @descriptiton fetches all planets
+ **/
+function getAllPlanets() {
+    return async dispatch => {
         try {
-            const t1 = await dashboardService.getPlanet(query);
-            dispatch(countValue())
+            const t1 = await dashboardService.getAllPlanets();
             dispatch(success(t1))
 
-        }catch (e) {
+        } catch (e) {
             dispatch(failure(e.toString()));
         }
     };
-    function countValue() {
-        return {type: dashboardConstants.INC_COUNT}
-    }
 
+    function request() {
+        return {type: dashboardConstants.GET_ALL_PLANETS_REQ}
+    }
     function success(data) {
-        return {type: dashboardConstants.SEARCH_PLANET, data}
+        return {type: dashboardConstants.GET_ALL_PLANETS, data}
     }
 
     function failure(data) {
-        return {type: dashboardConstants.SEARCH_PLANET_ERROR, data}
+        return {type: dashboardConstants.GET_ALL_PLANETS_ERR, data}
     }
 }

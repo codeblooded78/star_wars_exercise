@@ -3,9 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { loadState } from '../helpers/localStorage';
 const loggerMiddleware = createLogger();
-const persistedState = loadState();
 const {REACT_APP_environment} = process.env;
 
 let tStore;

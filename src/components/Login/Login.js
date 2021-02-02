@@ -3,13 +3,24 @@ import {connect} from "react-redux";
 import {LoginView} from "./LoginView";
 import './Login.css';
 import {loginAction} from "../../actions/login.actions";
-import {history} from "../../history";
 
 
 class Login extends Component{
+    componentDidMount() {
+        const{history} = this.props
+        if(!!localStorage.access_token){
+           history.push('/dashboard')
+        }
+    }
 
+    /**
+     * @name loginHandler
+     * @params values
+     * @descriptiton handler of login
+     **/
     loginHandler=(values)=>{
-        this.props.userLogin(values)
+        const{userLogin,history} = this.props
+       userLogin(values,history)
     }
 
     render() {

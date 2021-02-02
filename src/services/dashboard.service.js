@@ -1,13 +1,12 @@
-import {_getPlanets} from '../api/swapi.api'
+import {_getPlanets,_getAllPlanets} from '../api/swapi.api'
 export const dashboardService = {
-    getPlanet,
-
+    getAllPlanets
 };
 
-async function getPlanet(query){
+async function getAllPlanets(){
     try {
-        const t1 = await _getPlanets(query)
-        return t1.data;
+        const t1 = await _getAllPlanets()
+        return t1.data.results;
 
     }catch (e) {
         return Promise.reject(e);

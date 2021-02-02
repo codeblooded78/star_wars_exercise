@@ -19,8 +19,10 @@ export const LoginView=({
 
                 validationSchema={Yup.object({
                     username: Yup.string()
+                        .trim()
                         .required('Username is required'),
                     password: Yup.string()
+                        .trim()
                         .max(4, 'Password max-length can be 4')
                         .required('Password is required')
 

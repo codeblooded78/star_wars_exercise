@@ -1,12 +1,16 @@
 import { loginConstants} from '../constants';
-import {history} from "../history";
 
 export const loginAction = {
     userLogin,
     userLogout
 
 };
-function userLogin(values) {
+/**
+ * @name userLogin
+ * @params values,history
+ * @descriptiton mimics login action of user
+ **/
+function userLogin(values,history) {
     return async dispatch =>{
         try {
             dispatch(request())
@@ -19,7 +23,6 @@ function userLogin(values) {
                 history.push('/dashboard');
 
             }, 1500);
-            debugger
 
 
 
@@ -39,7 +42,12 @@ function userLogin(values) {
         return {type: loginConstants.USER_LOGIN_FAIL}
     }
 }
-function userLogout() {
+/**
+ * @name userLogout
+ * @params history
+ * @descriptiton logs user out after deleting the storage
+ **/
+function userLogout(history) {
     return async dispatch =>{
         try {
             dispatch(request())
