@@ -1,7 +1,7 @@
 import {loginConstants} from "../constants";
 
 const initialState ={
-    user:{isAuththenticated:false,isLoading:false}
+    user:{isAuthenticated:false,isLoading:false}
 };
 const {
    USER_LOGIN,
@@ -14,9 +14,9 @@ export function login(state = initialState,payload) {
         case USER_LOGIN_REQ:
             return {...state,user:{...state.user,isLoading: true}};
         case USER_LOGIN:
-            return {...state,user:{...state.user,isLoading: false,isAuththenticated: true}};
+            return {...state,user:{...state.user,isLoading: false,isAuthenticated: true}};
         case USER_LOGIN_FAIL:
-            return {...state,user:{...state.user,isLoading: false,isAuththenticated: false}};
+            return {...state,user:{...state.user,isLoading: false,isAuthenticated: false}};
         default:
             return state;
 
